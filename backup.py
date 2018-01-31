@@ -12,7 +12,7 @@ BASE_PATH = os.path.abspath(os.pardir)
 
 #shutil.copytree("/root/test_copy/target", "/root/test_copy/test/target")
 
-module_list = ["ResourceDownloader", "System"]
+module_list = ["ResourceDownloader"]
 
 
 def backup_begin():
