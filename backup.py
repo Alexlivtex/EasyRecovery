@@ -65,7 +65,7 @@ def backup_begin():
     def upload_data(path):
         bp = ByPy()
         bp.upload(path)
-        bp.cleancache()
+        #bp.cleancache()
 
     while True:
         try:
