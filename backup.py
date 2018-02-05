@@ -51,7 +51,7 @@ def backup_begin():
         os.mkdir(os.path.join(BACKUP_FOLDER, module_item))
 
     shutil.copytree(os.path.join(BASE_PATH, "ResourceDownloader", "file_config"), os.path.join(BACKUP_FOLDER, "ResourceDownloader", "file_config"))
-    shutil.copytree(os.path.join(BASE_PATH, "ResourceDownloader", "file_local"), os.path.join(BACKUP_FOLDER, "ResourceDownloader", "file_local"))
+    #shutil.copytree(os.path.join(BASE_PATH, "ResourceDownloader", "file_local"), os.path.join(BACKUP_FOLDER, "ResourceDownloader", "file_local"))
 
     shutil.copytree(os.path.join(BASE_PATH, "System"), os.path.join(BACKUP_FOLDER, "System"))
     shutil.copyfile("/etc/shadowsocks.json", os.path.join(BACKUP_FOLDER, "System", "shadowsocks.json"))
