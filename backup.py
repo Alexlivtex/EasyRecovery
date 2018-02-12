@@ -52,8 +52,10 @@ def backup_begin():
 
     shutil.copytree(os.path.join(BASE_PATH, "ResourceDownloader", "file_config"), os.path.join(BACKUP_FOLDER, "ResourceDownloader", "file_config"))
     #shutil.copytree(os.path.join(BASE_PATH, "ResourceDownloader", "file_local"), os.path.join(BACKUP_FOLDER, "ResourceDownloader", "file_local"))
+    
 
     shutil.copytree(os.path.join(BASE_PATH, "System"), os.path.join(BACKUP_FOLDER, "System"))
+    shutil.copytree("/var/www/html/wp-content", os.path.join(BACKUP_FOLDER, "wp-content"))
     shutil.copyfile("/etc/shadowsocks.json", os.path.join(BACKUP_FOLDER, "System", "shadowsocks.json"))
 
     tar = tarfile.open(BACKUP_FILE + ".tar.gz", "w:gz")
