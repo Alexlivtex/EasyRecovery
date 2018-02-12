@@ -11,6 +11,7 @@ def recover():
         os.system(clone_str)
 
     os.system("wget https://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip")
+    os.system("wget http://wordpress.org/latest.tar.gz")
     if not os.path.exists("ta-lib-0.4.0-src.tar.gz"):
         os.system("wget https://nchc.dl.sourceforge.net/project/ta-lib/ta-lib/0.4.0/ta-lib-0.4.0-src.tar.gz")
 
