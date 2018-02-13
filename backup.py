@@ -57,6 +57,11 @@ def backup_begin():
         os.mkdir(os.path.join(BACKUP_FOLDER, "ResourceDownloader", "file_local"))
 
     os.system("cp -rf " + os.path.join(BASE_PATH, "ResourceDownloader", "file_local") + "/* " + os.path.join(BACKUP_FOLDER, "ResourceDownloader", "file_local"))
+
+    for torrent_file in os.listdir(os.path.join(BACKUP_FOLDER, "ResourceDownloader", "file_local")):
+        if os.path.isdir(torrent_file):
+            shutil.rmtree(os.path.join(BACKUP_FOLDER, "ResourceDownloader", "file_local", torrent_file))
+            shutil.rmtree(os.path.join(BASE_PATH, "ResourceDownloader", "file_local", torrent_file))
     
 
     shutil.copytree(os.path.join(BASE_PATH, "System"), os.path.join(BACKUP_FOLDER, "System"))
@@ -74,6 +79,7 @@ def backup_begin():
         bp.upload(path)
         #bp.cleancache()
         os.remove(path)
+        shutil.rmtree(BACKUP_FOLDER)
 
     while True:
         try:
