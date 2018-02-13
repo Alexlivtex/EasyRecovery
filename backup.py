@@ -35,6 +35,7 @@ def timeout(seconds=10, error_message=os.strerror(errno.ETIME)):
 
         return wraps(func)(wrapper)
 
+
     return decorator
 
 def backup_begin():
@@ -52,6 +53,10 @@ def backup_begin():
 
     shutil.copytree(os.path.join(BASE_PATH, "ResourceDownloader", "file_config"), os.path.join(BACKUP_FOLDER, "ResourceDownloader", "file_config"))
     #shutil.copytree(os.path.join(BASE_PATH, "ResourceDownloader", "file_local"), os.path.join(BACKUP_FOLDER, "ResourceDownloader", "file_local"))
+    if not os.path.exists(os.path.join(BACKUP_FOLDER, "ResourceDownloader", "file_local")):
+        os.mkdir(os.path.join(BACKUP_FOLDER, "ResourceDownloader", "file_local"))
+
+    os.system("cp -rf " + os.path.join(BASE_PATH, "ResourceDownloader", "file_local") + "/* " + os.path.join(BACKUP_FOLDER, "ResourceDownloader", "file_local"))
     
 
     shutil.copytree(os.path.join(BASE_PATH, "System"), os.path.join(BACKUP_FOLDER, "System"))
@@ -68,6 +73,7 @@ def backup_begin():
         bp = ByPy()
         bp.upload(path)
         #bp.cleancache()
+        os.remove(path)
 
     while True:
         try:
