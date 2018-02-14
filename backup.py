@@ -95,3 +95,4 @@ def backup_begin():
 schedule.every().day.at("01:30").do(backup_begin)
 while True:
     schedule.run_pending()
+    time.sleep(1)
