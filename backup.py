@@ -6,6 +6,8 @@ from functools import wraps
 import errno
 from bypy import ByPy
 import time
+import schedule
+
 
 BACKUP_FOLDER = "BackupTarget"
 BACKUP_FILE = "BackupData"
@@ -90,4 +92,6 @@ def backup_begin():
             time.sleep(MAX_TIME_UPLOAD_SLEEP)
             continue
 
-backup_begin()
+schedule.every().day.at("01:30").do(backup_begin)
+while True:
+    schedule.run_pending()
