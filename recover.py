@@ -38,7 +38,7 @@ def recover():
     os.system("wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -")
     os.system("apt-get update")
 
-    ubuntu_packages = ["python-pip", "python3-pip", "python-libtorrent", "python3-libtorrent", "google-chrome-stable", "xvfb", "shadowsocks"]
+    ubuntu_packages = ["python-pip", "python3-pip", "python-libtorrent", "python3-libtorrent", "google-chrome-stable", "xvfb", "shadowsocks", "vsftpd"]
 
     for apt_index in ubuntu_packages:
         os.system("apt-get --assume-yes install " + apt_index)
