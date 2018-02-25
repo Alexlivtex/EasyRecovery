@@ -39,6 +39,7 @@ def config_system():
     f.write(json.dumps(data, ensure_ascii=False, indent=4, separators=(",", ":")))
     f.close()
 
+    os.system("apt-get install shadowsocks")
     os.system("service shadowsocks start")
     os.system("ssserver -c " + SHADOWSOCKS_CONFIG + " -d start")
 
