@@ -15,7 +15,7 @@ def wp_recover():
     os.system("mysql_secure_installation")
 
     php_packages = ["php", "php-mysql", "libapache2-mod-php", "php-cli", "php-cgi", "php-gd", "php-curl"]
-    os.system("pt-get install " + " ".join(php_packages))
+    os.system("apt-get install " + " ".join(php_packages))
 
     os.system("wget -c http://wordpress.org/latest.tar.gz")
     os.system("tar -xzvf latest.tar.gz")
@@ -27,8 +27,8 @@ def wp_recover():
 
     os.system("mysql -u root -p")
 
-    #mysql > CREATE DATABASE wp_myblog;
-    #mysql > GRANT ALL PRIVILEGES ON wp_myblog. * TO 'your_username_here' @ 'localhost' IDENTIFIED BY 'your_chosen_password_here';
+    #mysql > CREATE DATABASE wordpress;
+    #mysql > GRANT ALL PRIVILEGES ON wordpress.* TO 'alex'@'localhost' IDENTIFIED BY 'XXXXXXXX';
     #mysql > FLUSH PRIVILEGES;
     #mysql > EXIT;
 
