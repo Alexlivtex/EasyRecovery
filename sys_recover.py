@@ -16,6 +16,8 @@ def get_host_ip():
 
 
 def config_system():
+    os.system("apt-get update")
+    os.system("apt-get install python")
     address = get_host_ip()
 
     data = {}
