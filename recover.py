@@ -30,6 +30,7 @@ def recover():
     with open("/etc/profile", "a+") as etc_profile:
         etc_profile.write("export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib\n")
 
+    os.system("apt-get install unzip")
     os.system("unzip chromedriver_linux64.zip")
     shutil.move("chromedriver", "/usr/bin/chromedriver")
     os.remove("chromedriver_linux64.zip")
