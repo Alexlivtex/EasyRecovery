@@ -6,6 +6,8 @@ LIMITS_CONF=limits_modi.conf
 sudo apt-get update
 sudo apt-get upgrade -y
 
+apt-get install git
+
 #Installing the shadowsocksR and start the server
 chmod +x shadowsocksR.sh
 ./shadowsocksR.sh 2>&1 | tee shadowsocksR.log
